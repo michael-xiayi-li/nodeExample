@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<script src="https://cdn.shopify.com/s/assets/external/app.js"></script>
+	<script>
+	ShopifyApp.init({
+		apiKey: '<%= api_key %>',
+		shopOrigin: 'https://<%= shop %>.myshopify.com',
+
+	});
+	</script>
+	<link rel='stylesheet' href='/stylesheets/foundation.min.css' />
+	<link rel='stylesheet' href='/stylesheets/style.css' />
+	<title><%= title %></title>
+</head>
+<body>
+	<script type="text/javascript">
+	ShopifyApp.ready(function(){
+		ShopifyApp.Bar.initialize({
+			title: '<%= title %>',
+			icon: '/images/logo.png',
+			buttons: {
+				primary: {
+					label: "Save",
+					message: 'bar_save'
+				},
+				secondary: [
+					// Dropdown example
+					{ 
+						label: "More",
+						type: "dropdown",
+						links: [
+							// Link Button that opens in the app
+							{ label: "Update", href: "/update", target: "app" },
+							// Button with a callback function
+							{ label: "Delete", callback: function(){ alert("destroy") } }
+						]
+					},
+					{ 
+						// Link Button that opens in a new window
+						label: "Preview", href: 'http://<%= shop %>.myshopify.com', 
+						target: "new" 
+					},
+					{ 
+						label: "Open Modal", 
+						callback: function() {
+							ShopifyApp.Modal.open({
+							  src: 'http://localhost:3000/modal_content',
+							  title: 'A new modal',
+							  width: 'small',
+							  height: 300,
+							  buttons: {
+							    primary: { label: "OK" },
+							    secondary: [
+							      { label: "Cancel", callback: function (label) { ShopifyApp.Modal.close(); } }
+							    ]
+							  }
+							});
+						}
+					}
+				]
+			}
+		});
+		ShopifyApp.Bar.loadingOff();
+
+	});
+	</script>
+
+
+	<table style="width:100%">
+	<tr>
+	<th>
+	Make sure you take these steps before creating your bar:
+	</th>
+	</tr>
+	<tr>
+	<th>
+	1. Go to Admin > Settings > Shipping.
+	</th>
+	</tr>
+	<tr>
+	<th>
+	2. Create a shipping zone or under an existing shipping zone where you want to offer free shipping
+	</th>
+	</tr>
+	<tr>
+	<th>
+	3. Click "Add a shipping rate" > "Free Shipping" > "Based on order price"
+	</th>
+	</tr>
+	<tr>
+	<th>
+	4. Input minimum price (should be same as your goal bar price)
+	</th>
+	</tr>
+	<tr>
+	<th>
+	5. Click "Save"
+	</th>
+	</tr>
+	</table>
+
+
+
+
+	<button onclick="showTemplates()" > + Create a New Bar </button>
+	<table style="width:100%" id="dashboardTable">
+  <tr id="dashboardHeader" >
+    <th>Name </th>
+    <th>Goal</th> 
+    <th>Action</th>
+    <th>Status</th>
+  </tr>
+  <!--
+  <tr>
+  <td> Test Row</td>
+  <td> 100 </td>
+  <td>
+
+  	<input type="radio" id="radio1" name="radios" value="all" checked>
+       <label for="radio1">Edit</label>
+    <input type="radio" id="radio2" name="radios"value="false">
+       <label for="radio2">Deactivate</label>
+    <input type="radio" id="radio3" name="radios" value="true">
+       <label for="radio3">Duplicate</label> 
+     <input type="radio" id="radio4" name="radios" value="true">
+       <label for="radio4">Delete</label> 
+</td>
+  <td>Activated</td>
+  </tr>
+
+-->
+
+
+
+</table>
+
+<table style="width: 100%" id="templatesTable" class="templates">
+<tr>
+<th >
+Select a Color:
+</th>
+</tr>
+
+
+<tr>
+<td>
+	<div class= "blue bar" onclick= "showPreviews('blue')">
+	<!--
+	<p class="bluebar bannertext"> Blue </p>-->
+</div>
+</td>
+
+<td>
+	<div class= "black bar" onclick= "showPreviews('black')">
+	
+</div>
+</td>
+<td>
+	<div class= "yellow bar" onclick= "showPreviews('yellow')">
+
+</div>
+</td>
+<td>
+	<div class= "white bar" onclick= "showPreviews('white')">
+	
+</div>
+</td>
+
+
+</tr>
+
+
+
+
+
+<!--
+<tr>
+<td>
+<div class= "blue bar" onclick= "showPreviews('blue')">
+	<p class="bluebar bannertext"> Blue </p>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class= "black bar" onclick= "showPreviews('black')">
+	<p class="blackbar bannertext"> Black</p>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class= "yellow bar" onclick= "showPreviews('yellow')">
+	<p class="yellowbar bannertext"> Yellow</p>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class= "white bar" onclick= "showPreviews('white')">
+	<p class="whitebar bannertext"> White </p>
+</div>
+</td>
+</tr>
+-->
+</table>
+
+
+<table style="width: 100%" id="previewsTable" class="previews">
+<tr>
+<th>
+Preview:
+</th>
+</tr>
+
+
+<tr>
+<td>
+<div class= "foo blue">
+	<p>Test</p>
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class= "foo blue">
+</div>
+</td>
+</tr>
+
+<tr>
+<td>
+<div class= "foo blue">
+</div>
+</td>
+</tr>
+
+</table>
+
+<table style="width: 100%" id="formTable" class="forms">
+<tr>
+<th>
+Configure your table
+</th>
+</tr>
+<tr>
+<td>
+<form id= "formapp">
+ Bar Name:<br>
+  <input type="text" id="nameField" value = "Test Bar"><br>
+<!--todo: add currency and dollar symbol-->
+ Goal (How much to get free shipping) <br>
+ <input type="text" id="goalField" value=100><br>
+ Initial message <br>
+ <input type="text" id="initialMessageField" value="Get Free Shipping for Orders over $100!"> <br>
+ <div class="inline-float">
+ Progress message (Message before and after the amount of money buyer has left to get free shipping) <br>
+ <input type="text" id="beforeProgressMessageField" value="Only "> <p class="dollarOutput">$100 </p>  <input type="text" id="afterProgressMessageField" value = " before free shipping!"><br>
+ </div>
+ <div >
+ Goal message <br>
+ <input type="text" id="goalMessageField" value="Congratulations! You got free shipping!">  <br>
+ </div>
+
+ <br>
+ <div>
+ <button id="alterBarButton" onclick="finalizeBar()">Finalize</button>
+ </div>
+</form>
+</td>
+</tr>
+</table>
+
+
+
+	<script src="/scripts/indexpage.js"></script>
+
+</body>
+</html>
