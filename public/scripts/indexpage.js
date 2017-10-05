@@ -27,7 +27,7 @@ function deleteRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var url = 'https://sum.sumoselect.com\/deleteBar';
+	var url = 'https://108.167.175.187\/deleteBar';
 
 	for (var i=1 ; i<tablerows.length ; i++){
 		console.log(tablerows[i].tagName)
@@ -66,8 +66,8 @@ function activateRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var activateurl = 'https://sum.sumoselect.com\/activateBar';
-	var deactivateurl = 'https://sum.sumoselect.com\/deactivateBar';
+	var activateurl = 'https://108.167.175.187\/activateBar';
+	var deactivateurl = 'https://108.167.175.187\/deactivateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -138,7 +138,7 @@ function deactivateRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var url = 'https://sum.sumoselect.com\/deactivateBar';
+	var url = 'https://108.167.175.187\/deactivateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -368,7 +368,7 @@ function editBar(valuenum){
 	tablerows=dashboardTable.childNodes;
 	var oldBarName
 
-	var url = 'https://sum.sumoselect.com\/deactivateBar';
+	var url = 'https://108.167.175.187\/deactivateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -400,7 +400,7 @@ function editBar(valuenum){
 			
 	}
 
-	var url = 'https://sum.sumoselect.com\/editBar';
+	var url = 'https://108.167.175.187\/editBar';
 	$.ajax({
         type: 'POST',
         url: url,
@@ -435,7 +435,7 @@ function duplicateRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var url = 'https://sum.sumoselect.com\/duplicateBar';
+	var url = 'https://108.167.175.187\/duplicateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -527,7 +527,7 @@ function finalizeBar(){
 
 	}
 
-	var url = 'https://sum.sumoselect.com\/addBar';
+	var url = 'https://108.167.175.187\/addBar';
 	$.ajax({
         type: 'POST',
         dataType: 'jsonp',
