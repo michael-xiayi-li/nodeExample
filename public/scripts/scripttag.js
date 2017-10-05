@@ -136,7 +136,7 @@
 
 	function checkUser() {
 
-      var url = 'https://108.167.175.187\/scriptTagCode';
+      var url = 'http://108.167.175.187\/scriptTagCode';
 
       $.ajax({
         type: 'GET',
