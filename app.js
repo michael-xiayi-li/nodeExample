@@ -737,7 +737,7 @@ app.use(function(err, req, res, next) {
 });
 var server_ip_address = '108.167.175.187';
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || 1337);
 
 var server = app.listen(app.get('port'), server_ip_address, function() {
   console.log('Express server listening on port ' + server.address().port);
