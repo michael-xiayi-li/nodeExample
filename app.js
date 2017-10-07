@@ -191,12 +191,12 @@ function updateBar(result,req){
 
     var newbarList=result.barList;
 
-    var newBar =JSON.parse(JSON.stringify(req.query));
-    
+    //var newBar =JSON.parse(JSON.stringify(req.query));
+    var newBar = req.query;
     delete newBar['_'];
     delete newBar['callback'];
 
-    newbarList.push(req.body);
+    newbarList.push(newBar);
 
 
     var newvalues = { $set: { barList: newbarList } };
