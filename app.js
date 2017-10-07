@@ -191,8 +191,8 @@ function updateBar(result,req){
 
     var newbarList=result.barList;
 
-console.log(req.query);
-    
+    console.log(req.query);
+
     var newBar =JSON.parse(req.query);
     
     delete newBar['_'];
