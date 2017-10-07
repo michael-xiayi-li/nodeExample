@@ -534,6 +534,7 @@ function finalizeBar(){
         url: url,
         data:data,
         timeout: 15000,
+        json:true,
         success: function(a, status, XMLhttpReq) {
           location.reload();
           getAndPopulateRows();
