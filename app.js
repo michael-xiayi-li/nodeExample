@@ -193,9 +193,13 @@ function updateBar(result,req){
 
 
     var newvalues = { $set: { barList: newbarList } };
+    console.log('newvalues');
+    console.log(newvalues);
+
 
     db.collection("customerscart").updateOne(query,newvalues, function(err,res){
         if(err) return console.log(err);
+        console.log("success with adding")
     });
 
 
