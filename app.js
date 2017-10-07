@@ -191,7 +191,7 @@ function updateBar(result,req){
 
     var newbarList=result.barList;
 
-    var newBar =req.query;
+    var newBar =JSON.parse(req.query);
     console.log(req.query);
     delete newBar['_'];
     delete newBar['callback'];
