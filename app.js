@@ -169,7 +169,7 @@ function removeBar(result,req){
     var query= {shop:req.session.shop};
 
     newBarList = result.barList;
-    deleteBarName= req.body.name;
+    deleteBarName= req.query.name;
 
     for(i=0;i<newBarList.length;i++){
         if(newBarList[i].title===deleteBarName){
