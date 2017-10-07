@@ -175,7 +175,10 @@ function removeBar(result,req){
     
 
     for(i=0;i<newBarList.length;i++){
+        console.log(newBarList[i].title);
+
         if(newBarList[i].title===deleteBarName){
+            console.log('founddeletion');
             newBarList.splice(i,1);
             break;
         }
