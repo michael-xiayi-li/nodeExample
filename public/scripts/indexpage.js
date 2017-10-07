@@ -40,7 +40,7 @@ function deleteRow(valuenum){
 
 
 		$.ajax({
-        type: 'DELETE',
+        type: 'POST',
         dataType: 'json',
         url: url,
         data:data,
@@ -534,7 +534,7 @@ function finalizeBar(){
         url: url,
         data:data,
         timeout: 15000,
-        
+
         success: function(a, status, XMLhttpReq) {
           location.reload();
           getAndPopulateRows();

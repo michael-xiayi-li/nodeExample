@@ -151,7 +151,7 @@ app.get('/addBar',function(req,res){
 
 })
 
-app.delete('/deleteBar',function(req,res){
+app.post('/deleteBar',function(req,res){
 
 
 
