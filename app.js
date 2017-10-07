@@ -138,7 +138,7 @@ var myquery = { address: "Valley 345" };
 app.get('/addBar',function(req,res){
 
 
-    console.log(req);
+  
     var newbarList;
     var query= {shop:req.session.shop};
 
