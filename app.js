@@ -400,7 +400,7 @@ app.get('/products', function(req, res) {
     previous = page == 1 ? page : page - 1;
 
     request.get({
-        url: 'http://' + req.session.shop + '.myshopify.com/admin/products.json?limit=5&page=' + page,
+        url: 'https://' + req.session.shop + '.myshopify.com/admin/products.json?limit=5&page=' + page,
         headers: {
             'X-Shopify-Access-Token': req.session.access_token
         }
@@ -557,7 +557,7 @@ function createWebhook(req,res){
 
     request({
         method: "POST",
-        url: 'http://' + req.session.shop + '.myshopify.com/admin/webhooks.json',
+        url: 'https://' + req.session.shop + '.myshopify.com/admin/webhooks.json',
 
         headers: {
             'X-Shopify-Topic': "carts\/update",
@@ -595,7 +595,7 @@ function postScriptTag(req,res){
 
     request({
         method: "GET",
-        url: 'http://' + req.session.shop + '.myshopify.com/admin/script_tags.json',
+        url: 'https://' + req.session.shop + '.myshopify.com/admin/script_tags.json',
         headers: {
             'X-Shopify-Access-Token': req.session.access_token
         },
@@ -610,7 +610,7 @@ function postScriptTag(req,res){
         if(!scriptTagAlreadyExists){
     request({
         method: "POST",
-        url: 'http://' + req.session.shop + '.myshopify.com/admin/script_tags.json',
+        url: 'https://' + req.session.shop + '.myshopify.com/admin/script_tags.json',
 
         headers: {
             'X-Shopify-Access-Token': req.session.access_token
