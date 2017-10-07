@@ -156,6 +156,9 @@ app.post('/deleteBar',function(req,res){
 
 
     var query= {shop:req.session.shop};
+    console.log(req.session.shop);
+
+
     db.collection("customerscart").findOne(query,function(err,result){
         if(err) return console.log(err);
         removeBar(result,req);
