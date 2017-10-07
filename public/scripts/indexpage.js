@@ -27,7 +27,7 @@ function deleteRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var url = 'https://108.167.175.187\/deleteBar';
+	var url = 'http://108.167.175.187\/deleteBar';
 
 	for (var i=1 ; i<tablerows.length ; i++){
 		console.log(tablerows[i].tagName)
@@ -45,7 +45,7 @@ function deleteRow(valuenum){
         url: url,
         data:data,
         timeout: 15000,
-        success: function(a, status, XMLhttpsReq) {
+        success: function(a, status, XMLhttpReq) {
           location.reload();
           getAndPopulateRows();
 
@@ -66,8 +66,8 @@ function activateRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var activateurl = 'https://108.167.175.187\/activateBar';
-	var deactivateurl = 'https://108.167.175.187\/deactivateBar';
+	var activateurl = 'http://108.167.175.187\/activateBar';
+	var deactivateurl = 'http://108.167.175.187\/deactivateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -87,7 +87,7 @@ function activateRow(valuenum){
         url: activateurl,
         timeout: 15000,
         data:activatedata,
-        success: function(a, status, XMLhttpsReq) {
+        success: function(a, status, XMLhttpReq) {
   		location.reload();
           getAndPopulateRows();
 
@@ -115,7 +115,7 @@ function activateRow(valuenum){
         url: deactivateurl,
         timeout: 15000,
         data:deactivatedata,
-        success: function(a, status, XMLhttpsReq) {
+        success: function(a, status, XMLhttpReq) {
    
           location.href = location.href;
           getAndPopulateRows();
@@ -138,7 +138,7 @@ function deactivateRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var url = 'https://108.167.175.187\/deactivateBar';
+	var url = 'http://108.167.175.187\/deactivateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -157,7 +157,7 @@ function deactivateRow(valuenum){
         url: url,
         timeout: 15000,
         data:data,
-        success: function(a, status, XMLhttpsReq) {
+        success: function(a, status, XMLhttpReq) {
         console.log("ASDASD")
           location.href = location.href;
           getAndPopulateRows();
@@ -368,7 +368,7 @@ function editBar(valuenum){
 	tablerows=dashboardTable.childNodes;
 	var oldBarName
 
-	var url = 'https://108.167.175.187\/deactivateBar';
+	var url = 'http://108.167.175.187\/deactivateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -400,14 +400,14 @@ function editBar(valuenum){
 			
 	}
 
-	var url = 'https://108.167.175.187\/editBar';
+	var url = 'http://108.167.175.187\/editBar';
 	$.ajax({
         type: 'POST',
         url: url,
         data:data,
        // json: true,
         timeout: 15000,
-        success: function(a, status, XMLhttpsReq) {
+        success: function(a, status, XMLhttpReq) {
         	//alert("ASDASD0");
           location.reload();
 
@@ -435,7 +435,7 @@ function duplicateRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var url = 'https://108.167.175.187\/duplicateBar';
+	var url = 'http://108.167.175.187\/duplicateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -455,7 +455,7 @@ function duplicateRow(valuenum){
         timeout: 15000,
         data:data,
 
-        success: function(a, status, XMLhttpsReq) {
+        success: function(a, status, XMLhttpReq) {
 
           location.reload();
           getAndPopulateRows();
@@ -527,14 +527,14 @@ function finalizeBar(){
 
 	}
 
-	var url = 'https://108.167.175.187\/addBar';
+	var url = 'http://108.167.175.187\/addBar';
 	$.ajax({
         type: 'POST',
         dataType: 'jsonp',
         url: url,
         data:data,
         timeout: 15000,
-        success: function(a, status, XMLhttpsReq) {
+        success: function(a, status, XMLhttpReq) {
           location.reload();
           getAndPopulateRows();
         },

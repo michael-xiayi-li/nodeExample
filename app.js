@@ -9,6 +9,8 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var config = require('./settings');
 var session = require('express-session');
+
+
 const MongoClient = require('mongodb').MongoClient
 
 var app = express();
@@ -212,7 +214,7 @@ app.get('/access_token', verifyRequest, function(req, res) {
         var req_body = querystring.stringify(params);
         console.log(req_body)
         request({
-            url: 'https://' + req.query.shop + '/admin/oauth/access_token', 
+            url: 'http://' + req.query.shop + '/admin/oauth/access_token', 
             method: "POST",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -302,7 +304,7 @@ function deleteScriptTag(req,res){
     var idlist=[];
     request({
         method: "GET",
-        url: 'httpss://' + req.session.shop + '.myshopify.com/admin/script_tags.json',
+        url: 'https://' + req.session.shop + '.myshopify.com/admin/script_tags.json',
         headers: {
             'X-Shopify-Access-Token': req.session.access_token
         },
@@ -324,7 +326,7 @@ function deleteScriptTag(req,res){
 
             request({
                 method:"DELETE",
-                url: 'httpss://' + req.session.shop + '.myshopify.com/admin/script_tags/' + idlist[i]+'.json',
+                url: 'https://' + req.session.shop + '.myshopify.com/admin/script_tags/' + idlist[i]+'.json',
                 headers: {
                     'X-Shopify-Access-Token': req.session.access_token
                 }
@@ -393,7 +395,7 @@ app.get('/products', function(req, res) {
     previous = page == 1 ? page : page - 1;
 
     request.get({
-        url: 'https://' + req.session.shop + '.myshopify.com/admin/products.json?limit=5&page=' + page,
+        url: 'http://' + req.session.shop + '.myshopify.com/admin/products.json?limit=5&page=' + page,
         headers: {
             'X-Shopify-Access-Token': req.session.access_token
         }
@@ -439,7 +441,7 @@ app.post('/products', function(req, res) {
     console.log(req_body);
     request({
         method: "POST",
-        url: 'https://' + req.session.shop + '.myshopify.com/admin/products.json',
+        url: 'http://' + req.session.shop + '.myshopify.com/admin/products.json',
         headers: {
             'X-Shopify-Access-Token': req.session.access_token,
             'Content-type': 'application/json; charset=utf-8'
@@ -550,7 +552,7 @@ function createWebhook(req,res){
 
     request({
         method: "POST",
-        url: 'https://' + req.session.shop + '.myshopify.com/admin/webhooks.json',
+        url: 'http://' + req.session.shop + '.myshopify.com/admin/webhooks.json',
 
         headers: {
             'X-Shopify-Topic': "carts\/update",
@@ -573,7 +575,7 @@ function createWebhook(req,res){
 
 function postScriptTag(req,res){
 
-    var url="https://108.167.175.187\/scripts\/scripttag.js"
+    var url="http://108.167.175.187\/scripts\/scripttag.js"
 
 
     data = {
@@ -588,7 +590,7 @@ function postScriptTag(req,res){
 
     request({
         method: "GET",
-        url: 'https://' + req.session.shop + '.myshopify.com/admin/script_tags.json',
+        url: 'http://' + req.session.shop + '.myshopify.com/admin/script_tags.json',
         headers: {
             'X-Shopify-Access-Token': req.session.access_token
         },
@@ -603,7 +605,7 @@ function postScriptTag(req,res){
         if(!scriptTagAlreadyExists){
     request({
         method: "POST",
-        url: 'https://' + req.session.shop + '.myshopify.com/admin/script_tags.json',
+        url: 'http://' + req.session.shop + '.myshopify.com/admin/script_tags.json',
 
         headers: {
             'X-Shopify-Access-Token': req.session.access_token
@@ -735,6 +737,11 @@ app.use(function(err, req, res, next) {
         error: {}
     });
 });
+
+
+
+
+
 var server_ip_address = '108.167.175.187';
 
 app.set('port', process.env.PORT || 1337);
