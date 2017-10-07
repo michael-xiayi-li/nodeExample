@@ -212,9 +212,12 @@ app.get('/access_token', verifyRequest, function(req, res) {
             code: req.query.code
         }
         var req_body = querystring.stringify(params);
+
+        console.log("stringifiedreq_body:")
         console.log(req_body)
+
         request({
-            url: 'http://' + req.query.shop + '/admin/oauth/access_token', 
+            url: 'https://' + req.query.shop + '/admin/oauth/access_token', 
             method: "POST",
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
@@ -223,9 +226,11 @@ app.get('/access_token', verifyRequest, function(req, res) {
             body: req_body
         }, 
         function(err,resp,body) {
+            console.log("body response:")
             console.log(body);
             body = JSON.parse(body);
             req.session.access_token = body.access_token;
+            console.log("req session:")
             console.log(req.session);
             res.redirect('/');
         })
@@ -650,7 +655,9 @@ function verifyRequest(req, res, next) {
 
     var message = querystring.stringify(map);
     var generated_hash = crypto.createHmac('sha256', config.oauth.client_secret).update(message).digest('hex');
+    console.log("hash");
     console.log(generated_hash);
+    console.log("req.query");
     console.log(req.query.hmac);
     if (generated_hash === req.query.hmac) {
         next();
