@@ -136,14 +136,14 @@
 
 	function checkUser() {
 
-      var url = 'http://108.167.175.187\/scriptTagCode';
+      var url = 'https://108.167.175.187\/scriptTagCode';
 
       $.ajax({
         type: 'GET',
         dataType: 'jsonp',
         url: url,
         timeout: 15000,
-        success: function(a, status, XMLHttpReq) {
+        success: function(a, status, XMLhttpsReq) {
 
         	if(jQuery.isEmptyObject(a)) return;
 
