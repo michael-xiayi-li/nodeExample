@@ -189,7 +189,12 @@ function removeBar(result,req){
 function updateBar(result,req){
     var query= {shop:req.session.shop};
 
-    newbarList=result.barList;
+    var newbarList=result.barList;
+
+    var newBar =req.query;
+    delete newBar['_'];
+    delete newBar['callback'];
+
     newbarList.push(req.body);
 
 
