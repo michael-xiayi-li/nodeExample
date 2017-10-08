@@ -594,7 +594,7 @@ function createWebhook(req,res){
 
 function postScriptTag(req,res){
 
-    var url="http://108.167.175.187\/scripts\/scripttag.js"
+    var url="http:\/\/108.167.175.187\/scripts\/scripttag.js"
 
 
     data = {
