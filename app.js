@@ -657,7 +657,7 @@ function findExisting(response,url){
     for(i=0;i<scriptTagList.length;i++){
 
 
-        console.log(scriptTagList[i]);
+    
         if(scriptTagList[i].src ===url ){
             return true;
         }
@@ -673,10 +673,7 @@ function verifyRequest(req, res, next) {
 
     var message = querystring.stringify(map);
     var generated_hash = crypto.createHmac('sha256', config.oauth.client_secret).update(message).digest('hex');
-    console.log("hash");
-    console.log(generated_hash);
-    console.log("req.query");
-    console.log(req.query.hmac);
+ 
     if (generated_hash === req.query.hmac) {
         next();
     } else {
