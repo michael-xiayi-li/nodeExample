@@ -161,10 +161,7 @@ app.get('/deleteBar',function(req,res){
     console.log(req);
 
     var query= {shop:req.session.shop};
-    console.log('query');
-    console.log(query);
-    console.log("shoptest");
-    console.log(req.session.shop);
+
 
     db.collection("customerscart").findOne(query,function(err,result){
         if(err) return console.log(err);
@@ -179,16 +176,16 @@ function removeBar(result,req){
     var query= {shop:req.session.shop};
 
 
-    console.log(req.body.name);
+    console.log(req.query.name);
     var newBarList = result.barList;
-    var deleteBarName= req.body.name;
+    var deleteBarName= req.query.name;
     
 
     for(i=0;i<newBarList.length;i++){
         console.log(newBarList[i].title);
 
         if(newBarList[i].title===deleteBarName){
-            console.log('founddeletion');
+ 
             newBarList.splice(i,1);
             break;
         }
