@@ -785,15 +785,14 @@ var options = {
 };
 
 
-https.createServer(options, app).listen(app.get('port'),server_ip_address,function(){
-    console.log('Express server listening on port' + server.addres().port);
-});
 
-/*
+
 var server = app.listen(app.get('port'), server_ip_address, function() {
   console.log('Express server listening on port ' + server.address().port);
 });
-*/
+
+
+https.createServer(options,app);
 
 
 
