@@ -9,6 +9,9 @@ var bodyParser = require('body-parser');
 var request = require('request');
 var config = require('./settings');
 var session = require('express-session');
+var https = require('https');
+var http = require('http');
+var fs = require('fs');
 
 
 const MongoClient = require('mongodb').MongoClient
@@ -775,9 +778,26 @@ var server_ip_address = '108.167.175.187';
 
 app.set('port', process.env.PORT || 1337);
 
+
+var options = {
+  key: fs.readFileSync('../../../../etc/ssl/private/sum.sumoselect.com.key'),
+  cert: fs.readFileSync('../../../../etc/ssl/certs/sum.sumoselect.com.crt')
+};
+
+
+https.createServer(options, app).listen(app.get('port'),server_ip_address,function(){
+    console.log('Express server listening on port' + server.addres().port);
+});
+
+/*
 var server = app.listen(app.get('port'), server_ip_address, function() {
   console.log('Express server listening on port ' + server.address().port);
 });
+*/
+
+
+
+
 
 module.exports = app;
 
