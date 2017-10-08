@@ -40,7 +40,7 @@ function deleteRow(valuenum){
 
 
 		$.ajax({
-        type: 'POST',
+        type: 'GET',
         dataType: 'json',
         url: url,
         data:data,
