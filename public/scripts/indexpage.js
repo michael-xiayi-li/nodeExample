@@ -41,7 +41,7 @@ function deleteRow(valuenum){
 
 		$.ajax({
         type: 'GET',
-        dataType: 'json',
+        dataType: 'jsonp',
         url: url,
         data:data,
         timeout: 15000,
