@@ -63,7 +63,7 @@
 			bannerText.innerHTML= bannerJSON.goalMessageField;
 		}
 		else{
-			bannerText.innerHTML = bannerJSON.beforeProgressMessageField + "$" + (leftoverprice == NaN ? "" : leftoverprice) + bannerJSON.afterProgressMessageField;
+			bannerText.innerHTML = bannerJSON.beforeProgressMessageField + " $" + (leftoverprice == NaN ? "" : leftoverprice) + " " +  bannerJSON.afterProgressMessageField;
 			//banner.innerHTML = bannerJSON.beforeProgressMessageField + (leftoverprice == NaN ? "" : leftoverprice) + bannerJSON.afterProgressMessageField;
 		}
     }
