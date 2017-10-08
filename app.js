@@ -167,6 +167,7 @@ app.get('/deleteBar',function(req,res){
         if(err) return console.log(err);
         removeBar(result,req);
         res.json(200);
+        res.jsonp({});
 
 
     })
