@@ -166,7 +166,7 @@ app.get('/deleteBar',function(req,res){
     db.collection("customerscart").findOne(query,function(err,result){
         if(err) return console.log(err);
         removeBar(result,req);
-        res.json(200);
+       // res.json(200);
         res.jsonp({});
 
 
