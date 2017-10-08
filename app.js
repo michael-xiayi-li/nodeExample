@@ -780,8 +780,8 @@ app.set('port', process.env.PORT || 1337);
 
 
 var options = {
-  key: fs.readFileSync('../../../../etc/ssl/private/sum.sumoselect.com.key'),
-  cert: fs.readFileSync('../../../../etc/ssl/certs/sum.sumoselect.com.crt')
+  key: fs.readFileSync('ssl/priv/sum.sumoselect.com.key'),
+  cert: fs.readFileSync('ssl/cert/sum.sumoselect.com.crt')
 };
 
 
