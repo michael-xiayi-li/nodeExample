@@ -155,7 +155,7 @@ app.post('/deleteBar',function(req,res){
 
 
 
-    var query= {shop:req.session.shop};
+    var query= {shop:req.sessionStore.sessions.shop};
     
 
     console.log(req);
