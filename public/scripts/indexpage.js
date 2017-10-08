@@ -83,7 +83,7 @@ function activateRow(valuenum){
 
 		$.ajax({
         type: 'POST',
-        dataType: 'json',
+        dataType: 'jsonp',
         url: activateurl,
         timeout: 15000,
         data:activatedata,
@@ -153,7 +153,7 @@ function deactivateRow(valuenum){
 
 		$.ajax({
         type: 'POST',
-        dataType: 'json',
+        dataType: 'jsonp',
         url: url,
         timeout: 15000,
         data:data,
@@ -450,7 +450,7 @@ function duplicateRow(valuenum){
 
 		$.ajax({
         type: 'POST',
-        dataType: 'json',
+        dataType: 'jsonp',
         url: url,
         timeout: 15000,
         data:data,
