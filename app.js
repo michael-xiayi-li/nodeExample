@@ -486,7 +486,7 @@ app.post('/products', function(req, res) {
     })  
 })
 
-app.put('/deactivateBar',function(req,res){
+app.post('/deactivateBar',function(req,res){
     console.log("deactivating")
     var query= {shop:req.session.shop};
     db.collection("customerscart").findOne(query,function(err,result){
@@ -496,7 +496,7 @@ app.put('/deactivateBar',function(req,res){
     })
 })
 
-app.put('/activateBar',function(req,res){
+app.post('/activateBar',function(req,res){
     console.log("activating")
     var query= {shop:req.session.shop};
     db.collection("customerscart").findOne(query,function(err,result){

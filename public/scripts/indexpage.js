@@ -82,7 +82,7 @@ function activateRow(valuenum){
 		}
 
 		$.ajax({
-        type: 'PUT',
+        type: 'POST',
         dataType: 'json',
         url: activateurl,
         timeout: 15000,
@@ -152,7 +152,7 @@ function deactivateRow(valuenum){
 
 
 		$.ajax({
-        type: 'PUT',
+        type: 'POST',
         dataType: 'json',
         url: url,
         timeout: 15000,
