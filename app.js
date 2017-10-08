@@ -656,6 +656,8 @@ function findExisting(response,url){
 
     for(i=0;i<scriptTagList.length;i++){
 
+
+        console.log(scriptTagList[i]);
         if(scriptTagList[i].src ===url ){
             return true;
         }
