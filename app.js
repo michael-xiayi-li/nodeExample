@@ -495,7 +495,7 @@ app.get('/deactivateBar',function(req,res){
     db.collection("customerscart").findOne(query,function(err,result){
         if(err) return console.log(err);
         deactivateBar(result,req);
-        res.json(200)
+        res.jsonp({});
     })
 })
 
@@ -505,7 +505,7 @@ app.get('/activateBar',function(req,res){
     db.collection("customerscart").findOne(query,function(err,result){
         if(err) return console.log(err);
         activateBar(result,req);
-        res.json(200);
+        res.jsonp({});
 
     })
 })
