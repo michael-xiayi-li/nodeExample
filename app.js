@@ -279,17 +279,6 @@ app.get('/modal_content', function(req, res) {
 // The home page, checks if we have the access token, if not we are redirected to the install page
 // This check should probably be done on every page, and should be handled by a middleware
 app.get('/', function(req, res) {
-/*
-    var onequery = {: 2017}
-    console.log(db.collection("customerscart").count(onequery,function(err,res){
-        console.log(res);
-    }));
-    var zeroquery= {_id:0}
-    console.log(db.collection("customerscart").count(zeroquery,function(err,res){
-        console.log(res);
-    }));
-
-*/
 
     var shopquery={shop: req.session.shop}
 
@@ -617,6 +606,8 @@ function postScriptTag(req,res){
 
 
     scriptTagAlreadyExists=false;
+    console.log("scripttag shop:");
+    console.log(req.session.shop);
 
     request({
         method: "GET",
