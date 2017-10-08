@@ -160,7 +160,7 @@ app.get('/deleteBar',function(req,res){
 
     console.log(req);
 
-    var query= {shop:req.sessionStore.sessions.shop};
+    var query= {shop:req.session.shop};
     console.log('query');
     console.log(query);
     console.log("shoptest");
