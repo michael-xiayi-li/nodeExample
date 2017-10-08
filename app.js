@@ -158,6 +158,8 @@ app.get('/deleteBar',function(req,res){
 
 
 
+    console.log(req);
+
     var query= {shop:req.sessionStore.sessions.shop};
     console.log('query');
     console.log(query);
