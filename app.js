@@ -520,7 +520,7 @@ function activateBar(result,req){
     var query= {shop:req.session.shop};
 
     newBarList = result.barList;
-    deactivateBarName= req.body.name;
+    deactivateBarName= req.query.name;
     console.log(deactivateBarName);
     for(i=0;i<newBarList.length;i++){
         if(newBarList[i].title===deactivateBarName){
@@ -543,7 +543,7 @@ function deactivateBar(result,req){
     var query= {shop:req.session.shop};
 
     newBarList = result.barList;
-    deactivateBarName= req.body.name;
+    deactivateBarName= req.query.name;
     console.log(deactivateBarName);
     for(i=0;i<newBarList.length;i++){
         if(newBarList[i].title===deactivateBarName){
