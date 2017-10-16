@@ -21,13 +21,14 @@
   </tr>
 
 */
+var ipURL= 'http:\/\/108.167.175.187\/shippingbar';
 var barColor;
 function deleteRow(valuenum){
 	console.log("deleting")
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var url = 'http://108.167.175.187\/deleteBar';
+	var url = ipURL + '\/deleteBar';
 
 	for (var i=1 ; i<tablerows.length ; i++){
 		console.log(tablerows[i].tagName)
@@ -66,8 +67,8 @@ function activateRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var activateurl = 'http://108.167.175.187\/activateBar';
-	var deactivateurl = 'http://108.167.175.187\/deactivateBar';
+	var activateurl = ipURL + '\/activateBar';
+	var deactivateurl = ipURL + '\/deactivateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -138,7 +139,7 @@ function deactivateRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var url = 'http://108.167.175.187\/deactivateBar';
+	var url = ipURL + '\/deactivateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -368,7 +369,7 @@ function editBar(valuenum){
 	tablerows=dashboardTable.childNodes;
 	var oldBarName
 
-	var url = 'http://108.167.175.187\/deactivateBar';
+	var url = ipURL + '\/deactivateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -400,7 +401,7 @@ function editBar(valuenum){
 			
 	}
 
-	var url = 'http://108.167.175.187\/editBar';
+	var url = ipURL + '\/editBar';
 	$.ajax({
         type: 'POST',
         url: url,
@@ -435,7 +436,7 @@ function duplicateRow(valuenum){
 	var dashboardTable=document.getElementById("dashboardTable");
 	tablerows=dashboardTable.childNodes;
 
-	var url = 'http://108.167.175.187\/duplicateBar';
+	var url = ipURL + '\/duplicateBar';
 
 	for (var i=0 ; i<tablerows.length ; i++){
 
@@ -527,7 +528,7 @@ function finalizeBar(){
 
 	}
 
-	var url = 'http://108.167.175.187\/addBar';
+	var url = ipURL + '\/addBar';
 	$.ajax({
         type: 'POST',
         dataType: 'jsonp',

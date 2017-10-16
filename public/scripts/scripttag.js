@@ -5,7 +5,7 @@
 	var bannerText;
 	var userprice;
 	var banner;
-
+	var ipURL= 'http://108.167.175.187\/shippingbar';
 	function setUpBanner(){
 
 		if($(".sumobanner").length > 0) {
@@ -136,7 +136,7 @@
 
 	function checkUser() {
 
-      var url = 'http://108.167.175.187\/scriptTagCode';
+      var url = ipURL + '\/scriptTagCode';
 
       $.ajax({
         type: 'GET',
