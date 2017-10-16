@@ -5,7 +5,7 @@
 	var bannerText;
 	var userprice;
 	var banner;
-	var ipURL= 'http://108.167.175.187\/shippingbar';
+	var ipURL= 'https://108.167.175.187';
 	function setUpBanner(){
 
 		if($(".sumobanner").length > 0) {

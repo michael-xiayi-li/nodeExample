@@ -21,7 +21,7 @@
   </tr>
 
 */
-var ipURL= 'http:\/\/108.167.175.187\/shippingbar';
+var ipURL= 'http:\/\/108.167.175.187';
 var barColor;
 function deleteRow(valuenum){
 	console.log("deleting")
