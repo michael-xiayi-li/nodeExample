@@ -594,7 +594,7 @@ function createWebhook(req,res){
 
 function postScriptTag(req,res){
 
-    var url="https:\/\/108.167.175.187\/shippingbar\/scripts\/scripttag.js"
+    var url="https:\/\/108.167.175.187\/scripts\/scripttag.js"
 
 
     data = {
@@ -764,7 +764,7 @@ app.use(function(err, req, res, next) {
 
 
 
-var server_ip_address = '108.167.175.187/shippingbar';
+var server_ip_address = '108.167.175.187';
 
 app.set('port', process.env.PORT || 1337);
 
