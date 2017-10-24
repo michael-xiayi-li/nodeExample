@@ -279,7 +279,7 @@ app.get('/modal_content', function(req, res) {
 // The home page, checks if we have the access token, if not we are redirected to the install page
 // This check should probably be done on every page, and should be handled by a middleware
 app.get('/', function(req, res) {
-
+    console.log("rootobtain");
     var shopquery={shop: req.session.shop}
 
     db.collection("customerscart").count(shopquery,function(err,res){
