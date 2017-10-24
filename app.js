@@ -768,25 +768,9 @@ var server_ip_address = '108.167.175.187';
 
 app.set('port', process.env.PORT || 1337);
 
-
-var options = {
-  key: fs.readFileSync('ssl/priv/sum.sumoselect.com.key'),
-  cert: fs.readFileSync('ssl/cert/sum.sumoselect.com.crt')
-};
-
-
-
-
 var server = app.listen(app.get('port'), server_ip_address, function() {
   console.log('Express server listening on port ' + server.address().port);
 });
-
-
-https.createServer(options,app);
-
-
-
-
 
 module.exports = app;
 
