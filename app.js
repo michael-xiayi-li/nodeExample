@@ -44,6 +44,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 MongoClient.connect("mongodb://"+config.mlab_username + ":"+config.mlab_password + config.mongodb_url, (err, database) => {
+
+    console.log("mongodb://"+config.mlab_username + ":"+config.mlab_password + config.mongodb_url);
   if (err) return console.log(err)
   db = database
 /*
