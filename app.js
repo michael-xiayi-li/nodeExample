@@ -41,7 +41,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-
+/*
 
 MongoClient.connect("mongodb://"+config.mlab_username + ":"+config.mlab_password + config.mongodb_url, (err, database) => {
 
@@ -59,7 +59,7 @@ MongoClient.connect("mongodb://"+config.mlab_username + ":"+config.mlab_password
     //***************************************************************************
 
 
-});
+//});
 
 
 
